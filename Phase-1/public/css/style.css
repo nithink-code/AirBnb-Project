@@ -12,13 +12,12 @@ body{
 
 .fa-airbnb{
     color:#FF5A5F;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 .navbar-brand{
     color: #FF5A5F;
-    font-size: 1.7rem ;
-    margin-inline-start: 0.8rem;
+    font-size: 1.5rem ;
     margin-bottom: 5rem;
     font-weight: bold;
     
@@ -100,13 +99,14 @@ div h5 .errmsg{
 
 .container-fluid{
     height: 10rem;
+    
 }
 .nav-icons{
     margin-bottom: 0.5rem;
     border: 1px solid rgb(68, 66, 66);
-    width: 57rem;
+    width: 56rem;
     height: 5rem;
-    margin-left: 2.5rem;
+    margin-left: 0.5rem;
     border-radius: 2rem;
     justify-content: space-around;
 }
@@ -172,11 +172,11 @@ div h5 .errmsg{
       
         .auth-btns{
             border: 1px solid rgb(68, 66, 66);
-            width: 12.5rem;
+            width: 11rem;
             height: 3.5rem;
             margin-right: 1rem;
-            margin-left: 3rem;
-            margin-bottom: 6.5rem;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
             border-radius: 2rem;
         }
         .auth-btns .navbar-nav .signupbtn:hover{
@@ -189,7 +189,7 @@ div h5 .errmsg{
         .auth-btns .navbar-nav .loginbtn:hover{
             background-color: rgb(240, 237, 237);
             opacity: 0.5;
-            width: 6rem;
+            width: 5rem;
             height: 3rem;
             border-radius: 2rem;
         }
@@ -200,10 +200,10 @@ div h5 .errmsg{
 }
 .one{
     text-align: center;
-    margin-right: 2.5rem;
+    margin-right: 1rem;
     opacity: 0.7;
     justify-content: space-between;
-    padding-left: 2rem;
+    padding-left: 1rem;
 }
 .one:hover{
     opacity: 1;
@@ -220,7 +220,7 @@ div h5 .errmsg{
     align-items: center;
     border: 1px solid rgb(68, 66, 66);
     border-radius: 1rem;
-    margin-left: 2.5rem;
+    margin-left: 1rem;
     width: 15rem;
     height: 3rem;
     padding: 1rem;
