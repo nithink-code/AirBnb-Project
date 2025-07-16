@@ -1,0 +1,141 @@
+<% layout("/layouts/boilerplate")%>
+<body>
+    <h2><%=list.title%></h2>
+    <div class="row">
+        <div class="col-md-4 offset-4">
+        <div class="card" style="width: 25rem;">
+    <img src="<%=list.image.url%>" class="card-img-top" alt="listing-image">
+    <div class="card-body">
+    <br>
+    <h4><%=list.title%></h4><br>
+    <p><b>Owned By:</b> <%=list.owner.username%></p>
+    <p class="card-text"><%=list.description%></p>
+    <p>&#8377;<%=list.price.toLocaleString("en-In")%></p>
+    <p><%=list.country%></p>
+    <p><%=list.location%></p>
+    <div class="row">
+        <% if( currUser && currUser._id.equals(list.owner._id)){%>
+        <div class="col-md-4">
+    <form method="GET" action="/listings/<%=list._id%>/edit">
+        <button class="btn btn-primary">Edit</button>
+    </form>
+    </div>
+    <div class="col-md-5">
+    <form class="mb-3" method="POST" action="/listings/<%=list._id%>?_method=DELETE">
+        <button class="btn btn-danger">Delete</button>
+    </form>
+    <br>
+    </div>
+     <%}%>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <br>
+    <hr>
+    <form action="/listings/<%=list._id%>/review" method="post" class="needs-validation" novalidate>
+        <% if(currUser){ %>
+        <h5>Leave a Review</h5>
+  <div class="col-6 offset-3">
+  <div class="mb-3 mt-3">
+  <label for="rating" class="form-label">Ratings</label>
+  <fieldset class="starability-slot">
+  <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked aria-label="No rating." />
+  <input type="radio" id="first-rate1" name="review[rating]" value="1" />
+  <label for="first-rate1" title="Terrible">1 star</label>
+  <input type="radio" id="first-rate2" name="review[rating]" value="2" />
+  <label for="first-rate2" title="Not good">2 stars</label>
+  <input type="radio" id="first-rate3" name="review[rating]" value="3" />
+  <label for="first-rate3" title="Average">3 stars</label>
+  <input type="radio" id="first-rate4" name="review[rating]" value="4" />
+  <label for="first-rate4" title="Very good">4 stars</label>
+  <input type="radio" id="first-rate5" name="review[rating]" value="5" />
+  <label for="first-rate5" title="Amazing">5 stars</label>
+  </fieldset>
+  </div>
+    <div class="mb-3 mt-3">
+        <label for="comment" class="form-label">Comments</label>
+        <textarea name="review[comment]" cols="10" rows="5"class="form-control" id="comment" required></textarea>
+        <div class="invalid-feedback">
+            Please add some comments for Reviews!
+        </div>
+    </div>
+    <button class="btn btn-outline-dark">Submit</button>
+    </form>
+    <%}%>
+    <% if(list.review.length > 0){ %>
+    <div>
+        <br>
+        <h4>Reviews</h4>
+        <div class="row">
+            <% for(review of list.review){ %>
+                <div class="card col-5 ms-3 mb-3">
+                 <div class="card-body">
+                    <h4 class="card-title">@<%=review.author.username%></h4>
+                    <p class="card-text"><%=review.comment%></p>
+                      <p class="starability-result card-text" data-rating="<%=review.rating%>"></p>
+           <form method="post" action="/listings/<%=list._id%>/review/<%=review._id%>?_method=DELETE" class="mb-3">
+            <button class="btn btn-dark">Delete</button>
+           </form>
+           </div>
+        </div>
+            <%}%>
+    </div>    
+    </div>
+    <%}%>
+    </div>
+     <br>
+      <div class="col-6 offset-3 mt-5">
+        <h4>Location</h4>
+        <div id="map" style="height: 400px; width: 100%; border-radius: 8px; border: 1px solid #ddd;"></div>
+        
+        <script>
+            function initMap() {
+                // Default center point (can be changed to any location)
+                const center = { lat: 20.5937, lng: 78.9629 }; // Center of India
+                
+                const map = new google.maps.Map(document.getElementById("map"), {
+                    center: center,
+                    zoom: 12,
+                    mapTypeControl: true,
+                    streetViewControl: true
+                });
+                
+                // Add red center marker
+                new google.maps.Marker({
+                    position: center,
+                    map: map,
+                    title: "Center Point",
+                    icon: {
+                        path: google.maps.SymbolPath.CIRCLE,
+                        fillColor: "red",
+                        fillOpacity: 1,
+                        strokeColor: "white",
+                        strokeWeight: 1,
+                        scale: 10
+                    }
+                });
+            }
+            
+            function loadGoogleMaps() {
+                const apiKey = 'AlzaSyZX83rzc-utuioLQR1tY4lguDwAgf7e-gd'; // Replace with your API key
+                
+                if(typeof google === 'undefined') {
+                    const script = document.createElement('script');
+                    script.src = `https://maps.gomaps.pro/maps/api/js?key=AlzaSyZX83rzc-utuioLQR1tY4lguDwAgf7e-gd&callback=initMap`;
+                    script.async = true;
+                    script.defer = true;
+                    document.head.appendChild(script);
+                } else {
+                    initMap();
+                }
+            }
+            
+            // Load map when page is ready
+            document.addEventListener('DOMContentLoaded', loadGoogleMaps);
+        </script>
+    </div>
+    <br><br><br>
+    <br><br>
+</body>

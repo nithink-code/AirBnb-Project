@@ -1,0 +1,50 @@
+<%layout("/layouts/boilerplate")%>
+<body>
+    <form method="POST" action="/listings/<%=listing._id%>?_method=PUT" class="needs-validation" novalidate enctype="multipart/form-data">
+        <h2>Edit Your Listing</h2>
+        <div class="row">
+            <div class="col-8 offset-2">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" name="listing[title]" value="<%=listing.title%>" class="form-control">
+            <div class="invalid-feedback">Please enter a Title!</div>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+           <textarea name="listing[description]" class="form-control"><%=listing.description%></textarea>
+        </div>
+        <div class="mb-3">
+            <p>Original Image:</p>
+            <img src="<%=originalUrl%>" width="150" height="150">
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Upload New Image</label>
+            <input  name="listing[image]" value="<%=listing.image.url%>" class="form-control" type="file">
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="number" name="listing[price]" value="<%=listing.price%>" class="form-control">
+            <div class="invalid-feedback">Please enter a price!</div>
+        </div>
+        </div>
+          <div class="col-md-8">
+        <div class="mb-3">
+            <label for="country" class="form-label">Country</label>
+            <input type="text" name="listing[country]" value="<%=listing.country%>" class="form-control">
+        </div>
+        </div>
+        </div>
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" name="listing[location]" value="<%=listing.location%>" class="form-control">
+        </div>
+        <div>
+            <button class="btn btn-danger mb-3">Edit</button>
+        </div>
+    </form>
+    </div>
+    </div>
+    <script src="/js/script.js"></script>
+</body>

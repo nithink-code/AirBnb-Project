@@ -1,0 +1,241 @@
+body{
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-width: 100vh;
+}
+
+/* To make sure the body will occupy full width so that footer will remain sticked at bottom */
+.container{
+    flex: 1;  
+}
+
+.fa-airbnb{
+    color:#FF5A5F;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.navbar-brand{
+    color: #FF5A5F;
+    font-size: 1.7rem ;
+    margin-inline-start: 0.8rem;
+    margin-bottom: 5rem;
+    font-weight: bold;
+    
+}
+.navbar{
+    background-color: rgb(249, 249, 249) !important;
+    
+}
+.f-links a{
+    text-decoration: none;
+    color: #222222;
+}
+.f-links a:hover{
+    text-decoration: underline;
+}
+.f-socials{
+    width: 100%;
+    font-size: large;
+}
+.f-links{
+    width: 100%;
+}
+.f-info{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-evenly;
+    text-align: center;
+}
+footer{
+    background-color: whitesmoke;
+}
+
+/* Cards Styling */
+.listing-card{
+    border: none !important;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+.card-img-top{
+    border-radius: 1rem !important;
+    object-fit: cover !important;
+}
+.card-body{
+    padding: 0 !important;
+}
+.card-body .card-text p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+.listing-link{
+    text-decoration: none;
+}
+.card-img-overlay:hover{
+     opacity: 0.2;
+     background-color: white;
+}
+#navbarNavAltMarkup .navbar-nav a{
+    /* font-size: 1.2rem ; */
+    margin-bottom: 5rem;
+    padding: 1rem;
+}
+#navbarNavAltMarkup .navbar-nav #explore{
+    padding-left: 0.7rem;
+    margin-top: 0.3rem;
+    padding-right: 1rem;
+}
+
+h2{
+    text-align: center;
+}
+
+h5{
+    text-align: center;
+}
+div h5 .errmsg{
+    text-align: center;
+}
+
+.container-fluid{
+    height: 10rem;
+}
+.nav-icons{
+    margin-bottom: 0.5rem;
+    border: 1px solid rgb(68, 66, 66);
+    width: 57rem;
+    height: 5rem;
+    margin-left: 2.5rem;
+    border-radius: 2rem;
+    justify-content: space-around;
+}
+
+/* nav bar icons styling */
+
+@keyframes rotate360 {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+
+        /* Styling for the icon within the navbar */
+        .navbar-nav .nav-link .animated-home-icon {
+            font-size: 1.9rem; /* Adjust size as needed for your navbar */
+            color: #ff5a5f; /* Airbnb-like red */
+            display: inline-block; /* Crucial for transform to work */
+            vertical-align: middle; /* Align with text in navbar if any */
+        }
+
+        /* Apply the animation on page load */
+        .navbar-nav .nav-link .animated-home-icon.animate-on-load {
+            animation: rotate360 1.5s ease-out 0.3s 2 forwards;
+        }
+        .navbar-nav .icon-style:hover{
+            animation: rotate360 1.5s ease-in-out 0.3s 1 forwards;
+        }
+
+        /* Optional: Add a hover effect for a more interactive feel */
+        .navbar-nav .nav-link .animated-home-icon:hover {
+            transform: scale(1.1); /* Slightly enlarge on hover */
+            transition: transform 0.2s ease-in-out; /* Smooth transition */
+        }
+
+        /* General Navbar Styling for context */
+        .navbar-custom {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,.08);
+            padding: 0.5rem 1rem;
+        }
+
+        .nav-icons .explore1:hover{
+            background-color: rgb(221, 216, 216);
+            border-radius: 2rem;
+            opacity: 0.6;
+            width: 10rem;
+        }
+           .nav-icons .home1:hover{
+            background-color: rgb(221, 216, 216);
+            border-radius: 2rem;
+            opacity: 0.6;
+            width: 10rem; 
+        }
+           .nav-icons .newlists1:hover{
+            background-color: rgb(221, 216, 216);
+            border-radius: 2rem;
+            opacity: 0.6;
+            width: 14rem;
+        }
+      
+        .auth-btns{
+            border: 1px solid rgb(68, 66, 66);
+            width: 12.5rem;
+            height: 3.5rem;
+            margin-right: 1rem;
+            margin-left: 3rem;
+            margin-bottom: 6.5rem;
+            border-radius: 2rem;
+        }
+        .auth-btns .navbar-nav .signupbtn:hover{
+            background-color: rgb(240, 237, 237);
+            opacity: 0.5;
+            width: 6rem;
+            height: 3rem;
+            border-radius: 2rem;
+        }
+        .auth-btns .navbar-nav .loginbtn:hover{
+            background-color: rgb(240, 237, 237);
+            opacity: 0.5;
+            width: 6rem;
+            height: 3rem;
+            border-radius: 2rem;
+        }
+
+.filters{
+    display: flex;
+    flex-wrap: wrap;
+}
+.one{
+    text-align: center;
+    margin-right: 2.5rem;
+    opacity: 0.7;
+    justify-content: space-between;
+    padding-left: 2rem;
+}
+.one:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+.one p{
+    font-size: 1rem;
+}
+.tax-info{
+    display: none;
+}
+.tax-toggle{
+    display: flex;
+    align-items: center;
+    border: 1px solid rgb(68, 66, 66);
+    border-radius: 1rem;
+    margin-left: 2.5rem;
+    width: 15rem;
+    height: 3rem;
+    padding: 1rem;
+}
+.btn-search{
+    background-color:#ff5a5f;
+    color: white;
+    width: 8rem;
+    padding: 0.5rem;
+    border-radius: 1.5rem;
+}
+.btn-search:hover{
+    background-color: #ff5a5f;
+    color: white;
+}
+.btn-search i{
+    display: inline;
+}
