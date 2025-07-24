@@ -1,6 +1,7 @@
 if(process.env.NODE_ENV != "production"){
     require("dotenv").config();
 }
+
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -93,6 +94,10 @@ app.use("/listings",listing);
 app.use("/listings/:id/review",review);
 app.use("/",userRouter);
 
+app.get("/",(req,res)=>{
+    res.redirect("./listings");
+});
+
 
 // Handling wrong route access in the browser
 app.all("*",(req,res,next)=>{
@@ -107,6 +112,6 @@ app.use((err,req,res,next)=>{
     res.render("error.ejs",{err});
 });
 
-app.listen(8080,()=>{
-    console.log("Server is listening to port 8080");
+app.listen(3000,()=>{
+    console.log("Server is listening to port 3000");
 });
