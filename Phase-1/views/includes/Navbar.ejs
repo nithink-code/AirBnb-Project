@@ -1,33 +1,32 @@
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top navbar-custom">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/listings"><i class="fa-brands fa-airbnb"></i> airbnb</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav nav-icons">
-        <div class="explore1 icon-style"><a class="nav-link"id="explore" href="/listings"><i class="fa-solid fa-parachute-box animated-home-icon animate-on-load"></i> Explore</a></div>
-        <div class="home1 icon-style"><a class="nav-link"id="home" href="/listings"><i class="bi bi-house-fill animated-home-icon animate-on-load"></i> Home</a></div>
-        <div class="newlists1 icon-style"><a class="nav-link" id="newlists" href="/listings/new"><i class="bi bi-house-add animated-home-icon animate-on-load"></i> Airbnb your home</a></div>
-        <div class="search-div mt-3">
-      <form class="d-flex" role="search">
-      <button class="btn btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-    </form>
-      </div>
-      </div>
-       <div class="auth-btns">
-       <div class="navbar-nav ms-auto">
-        <!-- We cannot directly use req.user in ejs templating we can store it in local storage and then use it. -->
-        <% if(!currUser){ %>
-          <div class="signupbtn"> <a class="nav-link" aria-current="page" href="/signup"><b>Sign Up</b></a></div>
-           <div class="loginbtn"> <a class="nav-link" href="/login"><b>Login</b></a></div>
-        <% } %>
-        <% if(currUser){ %>
-         <a class="nav-link" href="/logout">Logout</a>
-        <% } %>
-      </div>
-      </div>
-      </div>
-      </div>
-  </div>
+<div class="container-fluid">
+ <a class="navbar-brand" href="/listings"><i class="fa-brands fa-airbnb animate-on-load"></i> airbnb</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+ <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+<div class="navbar-nav nav-icons">
+<div class="explore1 icon-style"><a class="nav-link"id="explore" href="/listings"><i class="fa-solid fa-parachute-box animated-home-icon animate-on-load"></i> Explore</a></div>
+<div class="home1 icon-style"><a class="nav-link"id="home" href="/listings"><i class="bi bi-house-fill animated-home-icon animate-on-load"></i> Home</a></div>
+<div class="newlists1 icon-style"><a class="nav-link" id="newlists" href="/listings/new"><i class="bi bi-house-add animated-home-icon animate-on-load"></i> Airbnb your home</a></div>
+<div class="search-div mt-3 d-none d-md-block">
+<form class="d-flex" role="search">
+<button class="btn btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+</form>
+</div>
+</div>
+<div class="auth-btns">
+<div class="navbar-nav ms-auto">
+<!-- We cannot directly use req.user in ejs templating we can store it in local storage and then use it. -->
+<% if(!currUser){ %>
+<div class="signupbtn"> <a class="nav-link" aria-current="page" href="/signup">Sign Up</a></div>
+<% } %>
+<% if(currUser){ %>
+<a class="nav-link" href="/logout">Logout</a>
+<% } %>
+</div>
+</div>
+</div>
+</div>
+</div>
 </nav>

@@ -2,8 +2,8 @@
 <body>
     <form method="POST" action="/listings/<%=listing._id%>?_method=PUT" class="needs-validation" novalidate enctype="multipart/form-data">
         <h2>Edit Your Listing</h2>
-        <div class="row">
-            <div class="col-8 offset-2">
+    <div class="row">
+        <div class="col-8 offset-1">
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
             <input type="text" name="listing[title]" value="<%=listing.title%>" class="form-control">
@@ -43,8 +43,8 @@
         <div>
             <button class="btn btn-danger mb-3">Edit</button>
         </div>
-    </form>
-    </div>
+        </form>
+        </div>
     </div>
     <script src="/js/script.js"></script>
 </body>
