@@ -19,7 +19,7 @@
 <div class="navbar-nav ms-auto">
 <!-- We cannot directly use req.user in ejs templating we can store it in local storage and then use it. -->
 <% if(!currUser){ %>
-<div class="signupbtn"> <a class="nav-link" aria-current="page" href="/signup">Sign Up</a></div>
+<div class="signupbtn"> <a class="nav-link" aria-current="page" href="/signup">Login</a></div>
 <% } %>
 <% if(currUser){ %>
 <a class="nav-link" href="/logout">Logout</a>

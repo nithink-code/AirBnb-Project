@@ -358,9 +358,6 @@ div h5 .errmsg{
 .btn-search i{
     display: inline;
 }
-.sign-btn{
-    display: none;
-}
 .auth-divs button{
     width: 6rem;
     height: 2.5rem;
